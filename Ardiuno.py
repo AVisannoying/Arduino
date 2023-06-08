@@ -1,6 +1,6 @@
 import pyfirmata
 import time
-from pyfirmata import Arduino , SERVO , util
+from pyfirmata import *
 from time import sleep
 
 port = ''
