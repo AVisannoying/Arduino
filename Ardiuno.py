@@ -75,7 +75,7 @@ def execute():
     wrist()
     sleep(1)
     closehand()
-
+ #for the ultra sonic sensor
 board.set_pin_mode_sonar(ecopin,trigpin,execute)
 if(True):
     sleep(0.5)
