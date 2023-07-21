@@ -9,7 +9,7 @@ board = pyfirmata.Arduino('')
 theta0 = 90 
 theta1 = 90
 theta2 = 90
-theta3 = 0  #for original posing of the servo
+theta3 = 0  #for original postioning ing of the servo
  
 servo1 = board.get_pin('d:3:s')
 servo2 = board.get_pin('d:5:s')
