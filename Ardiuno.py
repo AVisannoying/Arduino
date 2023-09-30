@@ -3,23 +3,27 @@ import time
 from pyfirmata import *
 from time import sleep
 
-port = ''
-pin = ''
-board = pyfirmata.Arduino('')
+board = Arduino('COM3')
 theta0 = 90 
 theta1 = 90
 theta2 = 90
-theta3 = 0  #for original postioning ing of the servo
+theta3 = 0  
+theta4 = 0
+theta5 = 0
  
 servo1 = board.get_pin('d:3:s')
 servo2 = board.get_pin('d:5:s')
 servo3 = board.get_pin('d:6:s')
 servo4 = board.get_pin('d:9:s') 
-trigpin = 11
-ecopin = 12
 
 #for servo1(base motor) 
-def base(pin , angle):
+def base1(pin , angle):
+    board.servo_config(3, angle = theta0)
+
+    servo1.write(theta0)
+    sleep(0.015)
+
+def base1(pin , angle):
     board.servo_config(3, angle = theta0)
 
     servo1.write(theta0)
@@ -75,13 +79,11 @@ def execute():
     wrist()
     sleep(1)
     closehand()
- #for the ultra sonic sensor
-board.set_pin_mode_sonar(ecopin,trigpin,execute)
-if(True):
-    sleep(0.5)
-    execute()
-else:
-    board.shutdown()
+ 
+
+execute()
+
+
 
 
 
